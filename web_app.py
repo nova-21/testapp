@@ -2,7 +2,7 @@ from flask import Flask
 import py_eureka_client.eureka_client as eureka_client
 from py_eureka_client import netint_utils
 
-estados={"sala":"","dormitorio":"","cocina":""}
+estados={"sala":"Apagadas/Cerradas","dormitorio":"Apagadas/Cerradas","cocina":"Apagadas/Cerradas"}
 rest_port =80
 
 
