@@ -1,7 +1,6 @@
 from flask import Flask
 import py_eureka_client.eureka_client as eureka_client
-from py_eureka_client import netint_utils
-from pyctuator.pyctuator import Pyctuator
+from flask_pyctuator.flask_pyctuator import FlaskPyctuator
 
 estados={"sala":"Apagadas/Cerradas","dormitorio":"Apagadas/Cerradas","cocina":"Apagadas/Cerradas"}
 rest_port =80
@@ -32,10 +31,11 @@ def iluminacion(habitacion,lumens,hora):
 def getIluminacion():
     return estados
 
-Pyctuator(
+FlaskPyctuator(
     app,
     app_name,
     app_url=host,
     pyctuator_endpoint_url="http://iluminacion-webavanzada.herokuapp.com/pyctuator",
-    registration_url="http://34.232.227.255:8086"
+    registration_url="http://34.232.227.255:8086",
+
 )
