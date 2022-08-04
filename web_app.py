@@ -12,7 +12,7 @@ app_name="iluminacion"
 eureka_client.init(eureka_server="http://52.73.98.2:8099/eureka",
                    app_name=app_name, instance_port=rest_port,instance_host=host)
 
-app = Flask(__name__)
+app = Flask(app_name)
 
 @app.post("/iluminacion/<habitacion>/<lumens>/<hora>")
 def iluminacion(habitacion,lumens,hora):
@@ -34,7 +34,7 @@ def getIluminacion():
 
 Pyctuator(
     app,
-    app_name=app_name,
+    app_name,
     app_url=host,
     pyctuator_endpoint_url="http://iluminacion-webavanzada.herokuapp.com/pyctuator",
     registration_url="http://34.232.227.255:8086/instances"
