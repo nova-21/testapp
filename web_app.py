@@ -37,5 +37,5 @@ Pyctuator(
     app_name,
     app_url=host,
     pyctuator_endpoint_url="http://iluminacion-webavanzada.herokuapp.com/pyctuator",
-    registration_url="http://34.232.227.255:8086/applications"
+    registration_url="http://34.232.227.255:8086"
 )
