@@ -1,7 +1,7 @@
 from flask import Flask
 import py_eureka_client.eureka_client as eureka_client
 from pyctuator.pyctuator import Pyctuator
-from flask_cors import CORS
+from flask_cors import CORS,cross_origin
 
 estados={"sala":"Apagadas/Cerradas","dormitorio":"Apagadas/Cerradas","cocina":"Apagadas/Cerradas"}
 
@@ -10,7 +10,7 @@ host="iluminacion-webavanzada.herokuapp.com"
 app_name="iluminacion"
 
 app = Flask(app_name)
-CORS(app)
+CORS(app,resources={r"/*/*":{"origins":"*"},})
 
 @app.post("/iluminacion/<habitacion>/<lumens>/<hora>")
 def iluminacion(habitacion,lumens,hora):
