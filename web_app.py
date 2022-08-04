@@ -35,7 +35,7 @@ def getIluminacion():
 Pyctuator(
     app,
     app_name=app_name,
-    app_url="http://example-app.com",
-    pyctuator_endpoint_url="http://example-app.com/pyctuator",
-    registration_url=os.getenv("SPRING_BOOT_ADMIN_URL")
+    app_url=host,
+    pyctuator_endpoint_url="http://iluminacion-webavanzada.herokuapp.com/pyctuator",
+    registration_url="http://34.232.227.255:8086"
 )
